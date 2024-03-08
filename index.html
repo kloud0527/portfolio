@@ -22,7 +22,18 @@
         .image-container:last-child {
             margin-right: 0; /* 最后一张图片不添加右边距 */
         }
-
+        .image-manga {
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .image-manga img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
         .image-container img {
             width: 100%;
             height: auto;
@@ -56,6 +67,12 @@
         .image-container:hover img {
             filter: brightness(70%);
         }
+        .image-manga:hover img {
+            filter: brightness(70%) scale(1.1);
+        }
+        .image-manga:hover .image-overlay {
+            opacity: 1;
+        }
 
         .image-container:hover .image-overlay {
             opacity: 1;
@@ -72,6 +89,13 @@
 <body>
 <div class="图片页面">
 <img src="1.png" alt="Your Image">
+<div class="image-manga" onclick="window.location.href='漫画.html'">
+    <img src="漫画.png" alt="Image 1">
+    <div class="image-overlay">
+        <p>欢迎来到我的漫画世界！</p>
+    </div>
+</div>
+<img src="1.5.png" alt="Your Image">
 </div>
 <div class="image-container" onclick="window.location.href='青南山.html'">
     <img src="青南山.png" alt="Image 1">
